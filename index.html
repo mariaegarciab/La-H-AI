@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentanos que sabores te gusta sentir (dulce, salado, jugozo, etc) </title>
+</head>
+<body>
+    <h1>AI La H Hamburgeseria!</h1>
+    <form action="/get_suggestion" method="post">
+        <label for="userInput">Cuentanos tu preferencias:</label>
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="submit">Dame sugerencias</button>
+    </form>
+
+    {% if suggestion %}
+        <p>Basado en tus preferencias: {{ suggestion }}</p>
+    {% endif %}
+</body>
+</html>
