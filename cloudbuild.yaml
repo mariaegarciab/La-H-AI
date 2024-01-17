@@ -3,7 +3,7 @@ steps:
     args: ['app', 'deploy']
     dir: 'path/to/your/app'
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: projects/trusty-pipe-411419/logs/cloudaudit.googleapis.com%2Factivity
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 substitutions:
   _SERVICE_ACCOUNT: mariaelena.garcia@student.ie.edu
