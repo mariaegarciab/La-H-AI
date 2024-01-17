@@ -1,0 +1,12 @@
+steps:
+# Install dependencies
+- name: 'python:3.0.0'
+  entrypoint: 'pip'
+  args: ['install', '-r', 'requirements.txt']
+
+# Build and deploy the application
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - 'app'
+    - 'deploy'
+    - 'app.yaml' 
