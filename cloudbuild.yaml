@@ -3,3 +3,4 @@ steps:
   args: ['build', '-t', 'gcr.io/myproject/myimage', '.']
 options:
  logging: GCS_ONLY
+ defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
