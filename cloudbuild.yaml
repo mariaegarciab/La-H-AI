@@ -1,9 +1,12 @@
-steps:
-  - id: "build image"
-    name: "gcr.io/cloud-builders/docker"
-    entrypoint: 'bash'
-    args:
-      ['-c', 'docker build --build-arg CONTAINER_PRIVATE_KEY=$$PRIVATE_KEY --build-arg CONTAINER_PUBLIC_KEY=$$PUBLIC_KEY -t gcr.io/${PROJECT_ID}/${_JOB_NAME} .']
+- id: "build image"
+  name: "gcr.io/cloud-builders/docker"
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      echo "PROJECT_ID: ${PROJECT_ID}"
+      echo "_JOB_NAME: ${_JOB_NAME}"
+      docker build --build-arg CONTAINER_PRIVATE_KEY=$$PRIVATE_KEY --build-arg CONTAINER_PUBLIC_KEY=$$PUBLIC_KEY -t gcr.io/${PROJECT_ID}/${_JOB_NAME} .
 
   - id: "push image"
     name: "gcr.io/cloud-builders/docker"
