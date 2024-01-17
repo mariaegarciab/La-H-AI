@@ -1,12 +1,10 @@
 steps:
-# Install dependencies
-- name: 'python:3.0.0'
-  entrypoint: 'pip'
-  args: ['install', '-r', 'requirements.txt']
-
-# Build and deploy the application
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-    - 'app'
-    - 'deploy'
-    - 'app.yaml' 
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy']
+    dir: 'path/to/your/app'
+options:
+  logging: CLOUD_LOGGING_ONLY
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+substitutions:
+  _SERVICE_ACCOUNT: mariaelena.garcia@student.ie.edu
+logsBucket: YOUR_LOGS_BUCKET_NAME
