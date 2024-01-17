@@ -1,10 +1,5 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy']
-    dir: 'path/to/your/app'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/myproject/myimage', '.']
 options:
-  logging: projects/trusty-pipe-411419
-  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
-substitutions:
-  _SERVICE_ACCOUNT: mariaelena.garcia@student.ie.edu
-logsBucket: YOUR_LOGS_BUCKET_NAME
+ logging: GCS_ONLY
