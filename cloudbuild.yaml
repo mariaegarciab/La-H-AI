@@ -4,7 +4,6 @@ steps:
     entrypoint: 'bash'
     args:
       ['-c', 'docker build --build-arg CONTAINER_PRIVATE_KEY=$$PRIVATE_KEY --build-arg CONTAINER_PUBLIC_KEY=$$PUBLIC_KEY -t gcr.io/${PROJECT_ID}/${_JOB_NAME} /path/to/Dockerfile']
-    secretEnv: [ 'PRIVATE_KEY', 'PUBLIC_KEY' ]
 options:
  logging: GCS_ONLY
  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
