@@ -59,7 +59,7 @@ This request sends user dietary preferences to the chatbot, which then returns a
 Interested in contributing to the La H AI project? Great! Start by reviewing the CONTRIBUTING.md in this repository. If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 If you encounter any problems, please file an issue along with a detailed description at GitHub Issues.
